@@ -1,0 +1,301 @@
+{
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Employee Survey Form",
+            "size": "Large",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "General Information",
+            "weight": "Bolder",
+            "separator": true
+        },
+        {
+            "type": "Input.Text",
+            "id": "employeeName",
+            "label": "Employee Name",
+            "placeholder": "Enter your name",
+            "isRequired": true,
+            "errorMessage": "Please enter your name"
+        },
+        {
+            "type": "Input.Text",
+            "id": "employeeID",
+            "label": "Employee ID",
+            "placeholder": "Enter your ID",
+            "isRequired": true,
+            "errorMessage": "Please enter your ID"
+        },
+        {
+            "type": "Input.Text",
+            "id": "department",
+            "label": "Department",
+            "placeholder": "Enter your department",
+            "isRequired": true,
+            "errorMessage": "Please enter your department"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Rating or Likert Scale Questions",
+            "weight": "Bolder",
+            "separator": true
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "id": "jobSatisfaction",
+            "label": "Job Satisfaction",
+            "choices": [
+                {
+                    "title": "1 - Very dissatisfied",
+                    "value": "1"
+                },
+                {
+                    "title": "2 - Dissatisfied",
+                    "value": "2"
+                },
+                {
+                    "title": "3 - Neutral",
+                    "value": "3"
+                },
+                {
+                    "title": "4 - Satisfied",
+                    "value": "4"
+                },
+                {
+                    "title": "5 - Very satisfied",
+                    "value": "5"
+                }
+            ],
+            "isRequired": true,
+            "errorMessage": "Please select your job satisfaction"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "id": "workLifeBalance",
+            "label": "Work-Life Balance",
+            "choices": [
+                {
+                    "title": "1 - Poor",
+                    "value": "1"
+                },
+                {
+                    "title": "2 - Fair",
+                    "value": "2"
+                },
+                {
+                    "title": "3 - Average",
+                    "value": "3"
+                },
+                {
+                    "title": "4 - Good",
+                    "value": "4"
+                },
+                {
+                    "title": "5 - Excellent",
+                    "value": "5"
+                }
+            ],
+            "isRequired": true,
+            "errorMessage": "Please select your work-life balance"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "id": "communication",
+            "label": "Communication within the Company",
+            "choices": [
+                {
+                    "title": "1 - Poor",
+                    "value": "1"
+                },
+                {
+                    "title": "2 - Fair",
+                    "value": "2"
+                },
+                {
+                    "title": "3 - Average",
+                    "value": "3"
+                },
+                {
+                    "title": "4 - Good",
+                    "value": "4"
+                },
+                {
+                    "title": "5 - Excellent",
+                    "value": "5"
+                }
+            ],
+            "isRequired": true,
+            "errorMessage": "Please select your communication rating"
+        },
+        {
+            "type":
+  
+   "Input.ChoiceSet",
+            "id": "teamCollaboration",
+            "label": "Team Collaboration",
+            "choices": [
+                {
+                    "title": "1 - Poor",
+                    "value": "1"
+                },
+                {
+                    "title": "2 - Fair",
+                    "value": "2"
+                },
+                {
+                    "title": "3 - Average",
+                    "value": "3"
+                },
+                {
+                    "title": "4 - Good",
+                    "value": "4"
+                },
+                {
+                    "title": "5 - Excellent",
+                    "value": "5"
+                }
+            ],
+            "isRequired": true,
+            "errorMessage": "Please select your team collaboration rating"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "id": "managerialSupport",
+            "label": "Managerial Support",
+            "choices": [
+                {
+                    "title": "1 - Poor",
+                    "value": "1"
+                },
+                {
+                    "title": "2 - Fair",
+                    "value": "2"
+                },
+                {
+                    "title": "3 - Average",
+                    "value": "3"
+                },
+                {
+                    "title": "4 - Good",
+                    "value": "4"
+                },
+                {
+                    "title": "5 - Excellent",
+                    "value": "5"
+                }
+            ],
+            "isRequired": true,
+            "errorMessage": "Please select your managerial support rating"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "id": "careerGrowth",
+            "label": "Career Growth Opportunities",
+            "choices": [
+                {
+                    "title": "1 - Very limited",
+                    "value": "1"
+                },
+                {
+                    "title": "2 - Limited",
+                    "value": "2"
+                },
+                {
+                    "title": "3 - Average",
+                    "value": "3"
+                },
+                {
+                    "title": "4 - Good",
+                    "value": "4"
+                },
+                {
+                    "title": "5 - Abundant",
+                    "value": "5"
+                }
+            ],
+            "isRequired": true,
+            "errorMessage": "Please select your career growth opportunities rating"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "id": "trainingDevelopment",
+            "label": "Training and Development Programs",
+            "choices": [
+                {
+                    "title": "1 - Inadequate",
+                    "value": "1"
+                },
+                {
+                    "title": "2 - Fair",
+                    "value": "2"
+                },
+                {
+                    "title": "3 - Satisfactory",
+                    "value": "3"
+                },
+                {
+                    "title": "4 - Good",
+                    "value": "4"
+                },
+                {
+                    "title": "5 - Excellent",
+                    "value": "5"
+                }
+            ],
+            "isRequired": true,
+            "errorMessage": "Please select your training and development rating"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "id": "compensationBenefits",
+            "label": "Compensation and Benefits",
+            "choices": [
+                {
+                    "title": "1 - Below average",
+                    "value": "1"
+                },
+                {
+                    "title": "2 - Average",
+                    "value": "2"
+                },
+                {
+                    "title": "3 - Satisfactory",
+                    "value": "3"
+                },
+                {
+                    "title": "4 - Good",
+                    "value": "4"
+                },
+                {
+                    "title": "5 - Excellent",
+                    "value": "5"
+  
+  
+                }
+            ],
+            "isRequired": true,
+            "errorMessage": "Please select your compensation and benefits rating"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Additional Comments",
+            "weight": "Bolder",
+            "separator": true
+        },
+        {
+            "type": "Input.Text",
+            "id": "comments",
+            "label": "Please provide any additional comments (optional)"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Submit"
+        }
+    ]
+  }
