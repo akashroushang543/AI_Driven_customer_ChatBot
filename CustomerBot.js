@@ -1,11 +1,19 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-const { ActivityHandler, MessageFactory } = require('botbuilder');
+const { ActivityHandler, MessageFactory, CardFactory } = require('botbuilder');
 const { PortalQuery } = require('./componentDialogs/dialogs_a')
+const { userprofile } = require('./componentDialogs/dialog_c')
 const { FeedbackSurvey } = require('./componentDialogs/dialog_b')
 const { DialogSet } = require('botbuilder-dialogs');
 const { CustomQuestionAnswering } = require('botbuilder-ai')
+const path = require('path');
+//const welcomeJsonPath = path.join(__dirname, 'Resources', 'adaptiveCards', 'welcome.json');
+
+const welcomeJsonPath = require('./Resources/adaptiveCards/welcome.json')
+const Announcments = require('./Resources/adaptiveCards/announcement.json')
+//console.log(welcomeJsonPath)
+const CARDS =[welcomeJsonPath, Announcments ]
 
 
 class CustomerBot extends ActivityHandler {
@@ -16,6 +24,7 @@ class CustomerBot extends ActivityHandler {
         this.dialogState = conversationState.createProperty("dialogState")
         this.dialogSet = new DialogSet(this.dialogState);
         this.PortalQuery = new PortalQuery(this.conversationState, this.userState, this.dialogSet);
+        this.userprofile = new userprofile(this.conversationState, this.userState, this.dialogSet);
         this.FeedbackSurvey = new FeedbackSurvey(this.conversationState, this.userState, this.dialogSet);
         this.previousIntent = this.conversationState.createProperty('previousIntent')
         this.conversationData = this.conversationState.createProperty('conversationData')
@@ -29,22 +38,13 @@ class CustomerBot extends ActivityHandler {
         } catch (err) {
             console.warn(`QnAMaker Exception: ${ err } Check your QnAMaker configuration in .env`);
         }
-        // const dispatchRecognizer = new QnAMakerRecognizer({
-        //     MicrosoftAppId: process.env.MicrosoftAppId,
-        //     endpointKey: process.env.LanguageEndpointKey,
-        //     endpoint: process.env.LanguageEndpointHostName,
-
-        // },{
-        //     EnablePreciseAnswer:true,
-        //     DisplayPreciseAnswerOnly:false
-        // }, true
-        // )
 
         // See https://aka.ms/about-bot-activity-message to learn more about the message and other activity types.
         this.onMessage(async (context, next) => {
 
            // const qanda = await dispatchRecognizer.recognize(context)
             //console.log(qanda)
+            
 
             await this.dispatchToInternetAsync(context)
             // const replyText = `Rayan: ${ context.activity.text }`;
@@ -54,8 +54,12 @@ class CustomerBot extends ActivityHandler {
         });
 
         this.onMembersAdded(async (context, next) => {
+           await context.sendActivity({
+            text: "",
+            attachments: [CardFactory.adaptiveCard(CARDS[0])]
+        }) 
             await this.sendWelecomeMessage(context)
-            
+           // await this.processMessage(context)
             // By calling next() you ensure that the next BotHandler is run.
             await next();
         });
@@ -73,12 +77,16 @@ class CustomerBot extends ActivityHandler {
                 const welcomeMessage = `welcome to Usha customer care ${activity.membersAdded[idx].name }.`
                 await turnContext.sendActivity(welcomeMessage)
                 await this.sendSuggestedActions(turnContext)
+                // await turnContext.sendActivity({
+                //     text: "welcome",
+                //     attachments: [CardFactory.adaptiveCard(CARDS[0])]
+                // }) 
             }
         }
     }
 
     async sendSuggestedActions(turnContext){
-        var reply = MessageFactory.suggestedActions(['Employee Query', 'my profile ','Feedback',])
+        var reply = MessageFactory.suggestedActions(['Employee Query', 'my profile','Feedback','Announcments'])
         await turnContext.sendActivity(reply)
     }
 
@@ -108,6 +116,29 @@ class CustomerBot extends ActivityHandler {
                 }
                 break;
 
+                case 'my profile':
+                    console.log('inside query dialog ')
+                    await this.conversationData.set(context, {endDialog: false})
+                    await this.userprofile.run(context,this.dialogState)
+                    conversationData.endDialog = await this.userprofile.IsDialogComplete()
+                    if(conversationData.endDialog){
+                        await this.previousIntent.set(context, {intentName: null})
+                        await this.sendSuggestedActions(context)
+                    }
+                    break;
+
+                    case 'Announcments':
+                    console.log('inside  Announcement ')
+                    await context.sendActivity({
+                    text: "here are some upcomming events and announcement",
+                    attachments: [CardFactory.adaptiveCard(CARDS[1])]
+                }) 
+                    
+                        await this.previousIntent.set(context, {intentName: null})
+                        await this.sendSuggestedActions(context)
+        
+                    break;
+
             case 'Feedback':
                     console.log('inside Feedback Survey dialog ')
                     await this.conversationData.set(context, {endDialog: false})
@@ -127,5 +158,11 @@ class CustomerBot extends ActivityHandler {
         }
 
     }
+    async processMessage(context) {
+        const request = context.activity.channelData.clientActivityId;
+        const ipAddress = request && request.split(':')[0];
+        // Use the ipAddress as needed
+      }
+    
 }
 module.exports.CustomerBot = CustomerBot;

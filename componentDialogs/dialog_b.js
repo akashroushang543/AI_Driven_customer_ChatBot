@@ -45,15 +45,7 @@ this.initialDialogId = WATERFALL_DIALOG
         }
       }
       
-    // async run(turnContext, accessor){
-    //     const dialogSet = new DialogSet(accessor)
-    //     dialogSet.add(this)
-    //     const dialogContext = await dialogSet.createContext(turnContext)
-    //     const results = await dialogContext.continueDialog();
-    //     if(results.status ===DialogTurnStatus.empty){
-    //         await dialogContext.beginDialog(this.id)
-    //     }
-    // }
+   
 
     async firstStep(step){
         endDialog = false;
@@ -61,7 +53,10 @@ this.initialDialogId = WATERFALL_DIALOG
             text: 'please enter your honest thought:',
             attachments: [CardFactory.adaptiveCard(CARDS[0])]
         }) 
-        
+        await step.context.activity.channelData.postBack === "true"
+          
+        //CARDS[0].onExecuteAction = function(action) { alert("Ow!"); }
+
         return await step.prompt(TEXT_PROMPT,``)
     }
     async getName(step){
@@ -72,8 +67,9 @@ this.initialDialogId = WATERFALL_DIALOG
           for (const element of body) {
             if (element.type === 'Input.Text' || element.type === 'Input.ChoiceSet' || element.type === 'Input.Date') {
               const id = element.id;
-              const value = element.value;
+              const value = step.result[id];
               inputData[id] = value;
+              console.log(inputData[id]);
             }
           }
         

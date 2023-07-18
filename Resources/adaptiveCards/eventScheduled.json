@@ -13,7 +13,7 @@
             "bleed": true,
             "height": "stretch",
             "minHeight": "240px",
-            "horizontalAlignment": "Center",
+            "horizontalAlignment": "center",
             "spacing": "None"
         },
         {

@@ -132,9 +132,7 @@
             "errorMessage": "Please select your communication rating"
         },
         {
-            "type":
-  
-   "Input.ChoiceSet",
+            "type": "Input.ChoiceSet",
             "id": "teamCollaboration",
             "label": "Team Collaboration",
             "choices": [
@@ -273,8 +271,6 @@
                 {
                     "title": "5 - Excellent",
                     "value": "5"
-  
-  
                 }
             ],
             "isRequired": true,
@@ -297,5 +293,6 @@
             "type": "Action.Submit",
             "title": "Submit"
         }
-    ]
-  }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}

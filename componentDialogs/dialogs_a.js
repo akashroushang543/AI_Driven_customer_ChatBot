@@ -104,16 +104,16 @@ try {
 
             // Answer span text has precise answer.
             var preciseAnswerText = response[0].answerSpan?.text;
-           // if (!preciseAnswerText) {
+           if (!preciseAnswerText) {
                 activities.push({ type: ActivityTypes.Message, text: answerText });
-            // } else {
-            //     activities.push({ type: ActivityTypes.Message, text: preciseAnswerText });
+            } else {
+                activities.push({ type: ActivityTypes.Message, text: preciseAnswerText });
 
-            //     if (!displayPreciseAnswerOnly) {
-            //         // Add answer to the reply when it is configured.
-            //         activities.push({ type: ActivityTypes.Message, text: answerText });
-            //     }
-            // }
+                if (!displayPreciseAnswerOnly) {
+                    // Add answer to the reply when it is configured.
+                    activities.push({ type: ActivityTypes.Message, text: answerText });
+                }
+            }
             if( answerText === "No answer found, Contact the administrator"){
                 await step.context.sendActivity(msg);
 

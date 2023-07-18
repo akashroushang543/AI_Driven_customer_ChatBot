@@ -1,0 +1,228 @@
+{
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Announcements",
+            "size": "Large",
+            "weight": "Bolder",
+            "color": "Accent"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.ShowCard",
+            "title": "TechXperience - Embrace the Future",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "text": "TechXperience - Embrace the Future",
+                        "weight": "Bolder",
+                        "size": "Medium",
+                        "color": "Accent"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Date: December 15, 2023",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Time: 6:00 PM - 11:00 PM",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Location: Usha Conference Hall",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Dress Code: Formal",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Description: Explore the latest in technology at our TechXperience event! Join us for a day filled with interactive exhibits, innovative demos, and futuristic gadgets. Get hands-on with cutting-edge tech and gain insights into the future of our industry. Don't miss this opportunity to embrace the future with us!",
+                        "wrap": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.OpenUrl",
+                        "title": "More Details",
+                        "url": "https://example.com/techxperience-details"
+                    },
+                    {
+                        "type": "Action.OpenUrl",
+                        "title": "Register",
+                        "url": "https://example.com/techxperience-registration"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Action.ShowCard",
+            "title": "Adrenaline Rush - Adventure Day",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "text": "Adrenaline Rush - Adventure Day",
+                        "weight": "Bolder",
+                        "size": "Medium",
+                        "color": "Accent"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Date: January 20, 2024",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Time: 7:00 PM - 10:00 PM",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Location: Usha Auditorium",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Dress Code: Semi-Formal",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Description: Calling all thrill-seekers! Gear up for an adrenaline-pumping adventure day! Challenge yourself with exciting outdoor activities like zip-lining, rock climbing, and paintball. Whether you're a seasoned adventurer or a first-timer, this day is all about conquering fears and creating unforgettable memories. Get ready for an action-packed day of fun and excitement!",
+                        "wrap": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.OpenUrl",
+                        "title": "More Details",
+                        "url": "https://example.com/adrenaline-rush-details"
+                    },
+                    {
+                        "type": "Action.OpenUrl",
+                        "title": "Register",
+                        "url": "https://example.com/adrenaline-rush-registration"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Action.ShowCard",
+            "title": "ArtFest - Unleash Your Creativity",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "text": "ArtFest - Unleash Your Creativity",
+                        "weight": "Bolder",
+                        "size": "Medium",
+                        "color": "Accent"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Date: February 10, 2024",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Time: 5:30 PM - 9:30 PM",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Location: Usha Gardens",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Dress Code: Casual",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Description: Unleash your creativity at ArtFest! Express yourself through various art forms, including painting, sculpting, and crafting. Let your imagination run wild as you create masterpieces and showcase your artistic talents. Join us for a day of inspiration, art workshops, and a chance to connect with fellow artists. Discover the joy of art and unlock the artist within you!",
+                        "wrap": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.OpenUrl",
+                        "title": "More Details",
+                        "url": "https://example.com/artfest-details"
+                    },
+                    {
+                        "type": "Action.OpenUrl",
+                        "title": "Register",
+                        "url": "https://example.com/artfest-registration"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Action.ShowCard",
+            "title": "Wellness Wonderland - Mind, Body & Soul",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "text": "Wellness Wonderland - Mind, Body & Soul",
+                        "weight": "Bolder",
+                        "size": "Medium",
+                        "color": "Accent"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Date: March 5, 2024",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Time: 6:30 PM - 11:00 PM",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Location: Usha Terrace",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Dress Code: Party Wear",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Description: Step into our Wellness Wonderland for a rejuvenating experience! Take a break from your busy schedule and focus on self-care. Engage in yoga sessions, meditation workshops, and wellness seminars to nourish your mind, body, and soul. Treat yourself to healthy snacks and refreshing drinks while connecting with colleagues on the path to wellness. Embrace a healthier and happier you at Wellness Wonderland!",
+                        "wrap": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.OpenUrl",
+                        "title": "More Details",
+                        "url": "https://example.com/wellness-wonderland-details"
+                    },
+                    {
+                        "type": "Action.OpenUrl",
+                        "title": "Register",
+                        "url": "https://example.com/wellness-wonderland-registration"
+                    }
+                ]
+            }
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+}
